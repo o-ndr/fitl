@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 use App\Http\Requests;
+
+use App\Presentation;
 
 class PresentationController extends Controller
 {
@@ -47,10 +50,12 @@ class PresentationController extends Controller
      */
     public function show($id)
     {
-    	echo $id;
-    	exit;
-    	
-        return view('presentations/show');
+    	$data = array();
+
+        $presentation = Presentation::findOrFail($id);
+        $data['object'] = $presentation;
+
+    	return view('presentations/show', $data);
     }
 
     /**
