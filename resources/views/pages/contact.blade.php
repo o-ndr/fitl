@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Contact</title>
-	</head>
-	<body>
-		<h1>Contact</h1>
-			<p>Oleksandr Pysaryuk, Twitter: @alexpysaryuk</p>
-	</body>
-</html>
+@extends('layouts.master')
+
+@section('title', 'Contact')
+
+@section('content')
+<h1>Contact</h1>
+<p>Oleksandr Pysaryuk, Twitter: @alexpysaryuk</p>
+@endsection
