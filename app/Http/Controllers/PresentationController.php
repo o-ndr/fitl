@@ -18,7 +18,13 @@ class PresentationController extends Controller
      */
     public function index()
     {
-        //
+        $presentations = Presentation::all();
+
+        $data = array();
+        $data['objects'] = $presentations;
+
+        return view('presentations.index', $data);
+
     }
 
     /**

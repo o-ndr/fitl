@@ -26,6 +26,10 @@ Route::get('contact', 'PageController@contact');
 
 Route::get('presentations/{presentation}', 'PresentationController@show');
 
+Route::get('presentations', 'PresentationController@index');
+
+
+
 
 /*
 |--------------------------------------------------------------------------
