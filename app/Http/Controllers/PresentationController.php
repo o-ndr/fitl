@@ -34,7 +34,10 @@ class PresentationController extends Controller
      */
     public function create()
     {
-        //
+        $presentation = new Presentation;
+        $data = array();
+        $data['presentation'] = $presentation;
+        return view('presentations.create', $data);
     }
 
     /**
@@ -45,7 +48,23 @@ class PresentationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $presentation = new Presentation;
+
+       // set the presentation's data from the form data
+       $presentation->presentation_title = $request->presentation_title;
+       $presentation->synopsis = $request->synopsis;
+       $presentation->conference_track = $request->conference_track;
+
+       // create the new presentation in the database
+       if (!$presentation->save()) {
+            $errors = $presentation->getErrors();
+            echo '<pre>';
+            print_r($errors);
+            echo '</pre>';
+
+       }
+
+
     }
 
     /**

@@ -21,12 +21,13 @@ Route::get('/', function () {
 
 
 Route::get('about', 'PageController@about');
-
 Route::get('contact', 'PageController@contact');
 
+Route::post('presentations/store', 'PresentationController@store');
+Route::get('presentations/create', 'PresentationController@create');
 Route::get('presentations/{presentation}', 'PresentationController@show');
-
 Route::get('presentations', 'PresentationController@index');
+
 
 
 
