@@ -58,13 +58,20 @@ class PresentationController extends Controller
        // create the new presentation in the database
        if (!$presentation->save()) {
             $errors = $presentation->getErrors();
-            echo '<pre>';
-            print_r($errors);
-            echo '</pre>';
-
+           
+           // redirect back to the create page 
+            // and pass along te errors
+            return redirect()
+            ->action('PresentationController@create')
+            ->with('errors', $errors)
+            ->withInput();
        }
 
-
+       // success!
+       return redirect()
+       ->action('PresentationController@index')
+       ->with('message',
+        '<div class="alert alert-success">Submission created successfully!</div>');
     }
 
     /**

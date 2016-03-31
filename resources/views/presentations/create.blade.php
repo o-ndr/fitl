@@ -1,6 +1,6 @@
 @extends ('layouts.master')
 
-@title('title', 'Submit a Presentation Proposal')
+@section ('title', 'Submit a Presentation Proposal')
 
 @section('content')
 
