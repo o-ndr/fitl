@@ -144,6 +144,13 @@ class PresentationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $presentation = Presentation::findOrFail($id);
+
+        $presentation->delete();
+
+        return redirect()
+          ->action('PresentationController@index')
+          ->with('message',
+              '<div class="alert alert-info">The presentation was deleted.</div>');
     }
 }

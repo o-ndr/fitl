@@ -20,4 +20,6 @@
 
 {!! Form::close() !!}
 
+@include('presentations.partials.delete_object')
+
 @endsection
