@@ -60,7 +60,7 @@ class PresentationController extends Controller
             $errors = $presentation->getErrors();
            
            // redirect back to the create page 
-            // and pass along te errors
+            // and pass along the errors
             return redirect()
             ->action('PresentationController@create')
             ->with('errors', $errors)
@@ -98,7 +98,8 @@ class PresentationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $presentation = Presentation::findOrFail($id);
+        return view('presentations.edit', ['presentation' => $presentation]);
     }
 
     /**
@@ -108,9 +109,31 @@ class PresentationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
-        //
+        $presentation = Presentation::findOrFail($id);
+
+        // set the presentation's data from the form data
+       $presentation->presentation_title = $request->presentation_title;
+       $presentation->synopsis = $request->synopsis;
+       $presentation->conference_track = $request->conference_track;
+
+       // if the save fails,
+       // redirect back to the edit page
+       // and show the errors
+       if (!$presentation->save()) {
+            return redirect()
+            ->action('PresentationController@edit', $presentation->id)
+            ->with('errors', $presentation->getErrors())
+            ->withInput();
+       }
+
+       // success!
+       // redirect to index and pass a success message
+       return redirect()
+       ->action('PresentationController@index')
+       ->with('message',
+            '<div class="alert alert-success">The presentation was updated!</div>');
     }
 
     /**

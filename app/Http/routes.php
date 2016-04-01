@@ -23,6 +23,8 @@ Route::get('/', function () {
 Route::get('about', 'PageController@about');
 Route::get('contact', 'PageController@contact');
 
+Route::get('presentations/{presentation}/edit', 'PresentationController@edit');
+Route::put('presentations/{presentation}', 'PresentationController@update');
 Route::post('presentations/store', 'PresentationController@store');
 Route::get('presentations/create', 'PresentationController@create');
 Route::get('presentations/{presentation}', 'PresentationController@show');
