@@ -43,5 +43,8 @@ Route::post('presentations/store', 'PresentationController@store');
 Route::get('presentations/create', 'PresentationController@create');
 Route::get('presentations/{presentation}', 'PresentationController@show');
 Route::get('presentations', 'PresentationController@index');
+
+Route::resource('presentation.ratings', 'PresentationRatingsController',
+                ['only' => ['store', 'update', 'destroy']]);
     //
 });

@@ -21,5 +21,6 @@
 		<script src="{{ asset('js/jquery-2.2.2.js') }}"></script>
 		<script src="{{ asset('js/bootstrap.js') }}"></script>
 		<script src="{{ asset('js/app.js') }}"></script>
+		<script src="{{ asset('js/bootstrap-rating-input.min.js') }}"></script>
 	</body>
 </html>

@@ -7,3 +7,10 @@ $('form.delete-object').submit(function(e) {
 	return deleteConfirmed;
 
 });
+
+// toggle rating edit form when "edit" buttons are clicked
+$('.edit-object').click(function(e) {
+	var $ratingItem = $(this).closest('li');
+	var $ratingForm = $ratingItem.find('form.edit-object-form');
+	$ratingForm.toggleClass('hide');
+});

@@ -13,10 +13,6 @@
 <p><?php echo $object->conference_track; ?></p>
 <p>Presentation submitted at: <?php echo $object->created_at; ?></p>
 
-<h2>Reviewer Rating</h2>
-@foreach ($object->ratings as $rating)
-	<p>{{ $rating->rating_by_reviewer }}</p>
-	<div><small>{{ $rating->created_at->diffForHumans() }}</small></div>
-@endforeach
+@include('presentations.ratings.partials.display')
 
 @endsection
