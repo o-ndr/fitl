@@ -1,4 +1,4 @@
-<div class="form-group">
+ <div class="form-group">
 	{!! Form::label('presentation_title', 'What is the title of your presentation?') !!}
 	{!! Form::text('presentation_title', null, ['class' => 'form-control']) !!}
  </div>

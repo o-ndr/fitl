@@ -46,5 +46,7 @@ Route::get('presentations', 'PresentationController@index');
 
 Route::resource('presentation.ratings', 'PresentationRatingsController',
                 ['only' => ['store', 'update', 'destroy']]);
+
+Route::resource('types', 'TypeController');	
     //
 });

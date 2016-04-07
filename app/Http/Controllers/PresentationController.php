@@ -23,6 +23,7 @@ class PresentationController extends Controller
 
         $data = array();
         $data['objects'] = $presentations;
+        $data['types'] = Type::all();
 
         return view('presentations.index', $data);
 

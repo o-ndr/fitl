@@ -3,6 +3,7 @@
 @section('title', 'LocWorld Submissions Review')
 
 @section('content')
+
 <div class="page-header">
 	<a href="{{ action('PresentationController@edit', $object->id) }}"
 		class="btn btn-info pull-right">Edit</a>
