@@ -1,6 +1,6 @@
 @extends ('layouts.master')
 
-@section('title', 'All Submissions')
+@section('title', 'Search results for "' . $q . '"')
 
 @section('content')
 
@@ -9,7 +9,7 @@
 
 		<div class="page-header">
 				<a href="{{ url('presentations/create') }}" class="btn btn-success pull-right">+ Presentation Proposal</a>
-				<h1>All submitted proposals for LocWorld presentations</h1>
+				<h1>Search results for "{{ $q }}"</h1>
 		</div>
 
 		@include('presentations.partials.presentations')

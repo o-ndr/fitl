@@ -41,6 +41,7 @@ Route::get('presentations/{presentation}/edit', 'PresentationController@edit');
 Route::put('presentations/{presentation}', 'PresentationController@update');
 Route::post('presentations/store', 'PresentationController@store');
 Route::get('presentations/create', 'PresentationController@create');
+Route::get('presentations/search', 'PresentationController@search');
 Route::get('presentations/{presentation}', 'PresentationController@show');
 Route::get('presentations', 'PresentationController@index');
 

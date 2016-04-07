@@ -18,6 +18,9 @@
         				<li><a href="{{ url('about') }}">About</a></li>
         				<li><a href="{{ url('contact') }}">Contact</a></li>        
       				</ul>
+
+              @include('shared.presentation_search_form')
+
     			</div><!-- /.navbar-collapse -->
   			</div><!-- /.container-fluid -->
 		</nav>

@@ -22,11 +22,29 @@ class PresentationController extends Controller
         $presentations = Presentation::all();
 
         $data = array();
-        $data['objects'] = $presentations;
+        $data['presentations'] = $presentations;
         $data['types'] = Type::all();
 
         return view('presentations.index', $data);
 
+    }
+
+
+    public function search(Request $request)
+    {
+      // retrieve query from URL
+      $q = $request->q;
+
+      // SQL LIKE format for matching on search query:
+      // %SEARCH_TERM%
+      $q_query = '%' . $q . '%';
+      $presentations = Presentation::where('presentation_title', 'LIKE', $q_query)
+                                      ->orWhere('synopsis', 'LIKE', $q_query)
+                                      ->orWhere('conference_track', 'LIKE', $q_query)
+                                      ->get();
+
+      return view('presentations.search', 
+        ['q' => $q, 'presentations' => $presentations, 'types' => Type::all()]);
     }
 
     /**
