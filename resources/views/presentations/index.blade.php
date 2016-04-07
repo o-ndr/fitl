@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="page-header">
+		<a href={{ url('presentations/create') }} class="btn btn-success pull-right">+ Presentation Proposal</a>
 		<h1>All submitted proposals for LocWorld presentations</h1>
 </div>
 

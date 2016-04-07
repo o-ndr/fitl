@@ -15,4 +15,8 @@ class Presentation extends Model
 	public function ratings() {
 		return $this->hasMany('App\Ratings')->orderBy('created_at', 'desc');
 	}
+
+	public function types() {
+		return $this->belongsToMany('App\Type', 'presentations_types');
+	}
 }
