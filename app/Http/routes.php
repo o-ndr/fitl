@@ -54,7 +54,7 @@ Route::resource('types', 'TypeController');
 // User routes
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('logout', 'Auth\AuthController@logout');
 Route::get('auth/register', 'Auth\AuthController@getregister');
 Route::post('auth/register', 'Auth\AuthController@postregister');
 

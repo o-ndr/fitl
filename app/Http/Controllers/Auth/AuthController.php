@@ -37,8 +37,14 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
+        // commenting the 3 lines below as suggested by @nickstc who says...
+        // the bottom is from a fresh laravel install the code that you have here...
+        // ...seems redundant $this->middleware($this->guestMiddleware()
+    //{
+    //    $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+    //}
 
     /**
      * Get a validator for an incoming registration request.
