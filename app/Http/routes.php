@@ -24,13 +24,15 @@
 
 Route::group(['middleware' => ['web']], function () {
 
-  Route::get('welcome', function () {
-    return view('welcome');
+// Route::get('welcome', function () {
+//    return view('welcome');
+// });
+
+Route::get('home', function() {
+	return redirect('/');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PresentationController@index');	
 
 
 Route::get('about', 'PageController@about');
@@ -49,5 +51,11 @@ Route::resource('presentation.ratings', 'PresentationRatingsController',
                 ['only' => ['store', 'update', 'destroy']]);
 
 Route::resource('types', 'TypeController');	
+
+// User routes
+Route::get('auth/register', 'Auth\AuthController@getregister');
+Route::post('auth/register', 'Auth\AuthController@postregister');
+
+
     //
 });
