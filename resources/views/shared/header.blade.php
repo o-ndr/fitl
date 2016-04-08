@@ -19,6 +19,8 @@
         				<li><a href="{{ url('contact') }}">Contact</a></li>        
       				</ul>
 
+              @include('shared.user_actions')
+              
               @include('shared.presentation_search_form')
 
     			</div><!-- /.navbar-collapse -->
