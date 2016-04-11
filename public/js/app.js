@@ -14,3 +14,4 @@ $('.edit-object').click(function(e) {
 	var $ratingForm = $ratingItem.find('form.edit-object-form');
 	$ratingForm.toggleClass('hide');
 });
+

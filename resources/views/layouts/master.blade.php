@@ -4,6 +4,7 @@
 		<title>@yield('title')</title>
 		<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+		<script src='js/elevator.js'></script>
 	</head>
 	<body>
 		@include('shared.header')

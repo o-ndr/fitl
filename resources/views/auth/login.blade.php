@@ -26,7 +26,7 @@
 		</label>
 	</div>
 
-	<button type="submit" class="btn btn-success">{{ trans('messages.login') }}</button>
+	<button type="submit" class="btn btn-success">Log in</button>
 
 {!! Form::close() !!}
 

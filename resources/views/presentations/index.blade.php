@@ -20,4 +20,20 @@
 
 </div><!-- /.row -->
 
+<div class="elevator-button">Back to Top</div>
+
+
+
+<script>
+// Elevator script included on the page, already.
+
+window.onload = function() {
+  var elevator = new Elevator({
+    element: document.querySelector('.elevator-button'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+
+
 @endsection
