@@ -14,6 +14,7 @@
 
 	@else
 		<li><a href="{{ action('Auth\AuthController@getLogin') }}">Log in</a></li>
+		<li><a href="{{ action('Auth\AuthController@getregister') }}">Register</a></li>
 	@endif
 
 </ul>

@@ -58,6 +58,14 @@ Route::get('logout', 'Auth\AuthController@logout');
 Route::get('auth/register', 'Auth\AuthController@getregister');
 Route::post('auth/register', 'Auth\AuthController@postregister');
 
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
 
     //
 });
