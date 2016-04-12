@@ -10,8 +10,15 @@ use App\Http\Requests;
 use App\Presentation;
 use App\Type;
 
+use Auth;
+
 class PresentationController extends Controller
 {
+      public function __construct()
+      {
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
+      }
+
     /**
      * Display a listing of the resource.
      *
@@ -80,6 +87,7 @@ class PresentationController extends Controller
        $presentation->presentation_title = $request->presentation_title;
        $presentation->synopsis = $request->synopsis;
        $presentation->conference_track = $request->conference_track;
+       $presentation->user_id = Auth::user()->id;
        
 
        // create the new presentation in the database
@@ -130,6 +138,11 @@ class PresentationController extends Controller
     public function edit($id)
     {
         $presentation = Presentation::findOrFail($id);
+
+        if ( ! $presentation->canEdit() ) {
+          abort('403', 'Not authorized.');
+        }
+
         $types = Type::lists('type', 'id');
         return view('presentations.edit', ['presentation' => $presentation, 'types' => $types]);
     }
@@ -144,6 +157,10 @@ class PresentationController extends Controller
     public function update($id, Request $request)
     {
         $presentation = Presentation::findOrFail($id);
+
+        if ( ! $presentation->canEdit() ) {
+          abort('403', 'Not authorized.');
+        }
 
         // set the presentation's data from the form data
        $presentation->presentation_title = $request->presentation_title;
@@ -178,6 +195,10 @@ class PresentationController extends Controller
     public function destroy($id)
     {
         $presentation = Presentation::findOrFail($id);
+
+        if ( ! $presentation->canEdit() ) {
+          abort('403', 'Not authorized.');
+        }
 
         $presentation->delete();
 

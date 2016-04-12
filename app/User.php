@@ -44,4 +44,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         $first_name = $name_parts[0];
         return $first_name;
     }
+
+    public function presentations()
+    {
+        return $this->hasMany('App\Presentation');
+    }
 }
