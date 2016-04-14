@@ -9,7 +9,7 @@
 
 		<div class="page-header">
 			<a href="{{ url('presentations/create') }}" class="btn btn-success pull-right">+ Presentation Proposal</a>
-			<h1>Presentations of the following type: {{ $type->type }}</h1>
+			<h1>Type of presentation: {{ $type->type }}</h1>
 		</div>
 
 		<div class="list-group">

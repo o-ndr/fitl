@@ -17,6 +17,10 @@ class Ratings extends Model
 		return $this->belongsTo('App\User');
 	}
 
+	public function presentation() {
+		return $this->belongsTo('App\Presentation');
+	}
+
 
 	public function canEdit()
 	{

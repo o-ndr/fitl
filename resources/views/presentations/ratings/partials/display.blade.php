@@ -13,12 +13,15 @@
 			<small>{{ $rating->created_at->diffForHumans() }}</small>
 		</div>
 		<p>{{ $rating->rating_by_reviewer }}</p>
-		<div class="clearfix">
-			<button class="edit-object btn btn-info btn-xs pull-left">edit</button>
-			@include('presentations.ratings.partials.delete')
-		</div>
 
-		@include('presentations.ratings.partials.edit')
+		@if ($rating->canEdit() )
+			<div class="clearfix">
+				<button class="edit-object btn btn-info btn-xs pull-left">edit</button>
+				@include('presentations.ratings.partials.delete')
+			</div>
+
+			@include('presentations.ratings.partials.edit')
+		@endif
 	</li>
 @endforeach
 </ul>

@@ -9,7 +9,7 @@
 
 		<div class="page-header">
 				<a href="{{ url('presentations/create') }}" class="btn btn-success pull-right">+ Presentation Proposal</a>
-				<h1>All submitted proposals for LocWorld presentations</h1>
+				<h1>All submitted presentation proposals</h1>
 		</div>
 
 		@include('presentations.partials.presentations')
