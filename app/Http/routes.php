@@ -52,11 +52,11 @@ Route::resource('presentation.ratings', 'PresentationRatingsController',
 Route::resource('types', 'TypeController');	
 
 // User routes
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('login', 'Auth\AuthController@getLogin');
+Route::post('login', 'Auth\AuthController@postLogin');
 Route::get('logout', 'Auth\AuthController@logout');
 Route::get('auth/register', 'Auth\AuthController@getregister');
-Route::post('auth/register', 'Auth\AuthController@postregister');
+Route::post('auth/ter', 'Auth\AuthController@postregister');
 
 // Password reset link request routes...
 Route::get('password/email', 'Auth\PasswordController@getEmail');

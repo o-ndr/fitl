@@ -9,10 +9,14 @@ use App\Http\Requests;
 
 use App\Ratings;
 
+use Auth;
 
 class PresentationRatingsController extends Controller
 {
-    
+    public function __construct()
+      {
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
+      }    
 
     /**
      * Store a newly created resource in storage.
@@ -28,6 +32,7 @@ class PresentationRatingsController extends Controller
 
         $rating->presentation_id = $presentationId;
         $rating->rating_by_reviewer = $request->rating_by_reviewer;
+        $rating->user_id = Auth::user()->id;
 
         if ( ! $rating->save() ) {
             return redirect()
@@ -52,6 +57,10 @@ class PresentationRatingsController extends Controller
     public function update(Request $request, $presentationId, $id)
     {
         $rating = Ratings::findOrFail($id);
+
+        if ( ! $rating->canEdit() ) {
+          abort('403', 'Not authorized.');
+        }
 
         $rating->rating_by_reviewer = $request->rating_by_reviewer;
 
@@ -78,6 +87,10 @@ class PresentationRatingsController extends Controller
     public function destroy($presentationId, $id)
     {
         $rating = Ratings::findOrFail($id);
+
+        if ( ! $rating->canEdit() ) {
+          abort('403', 'Not authorized.');
+        }
 
         $rating->delete();
 
