@@ -69,6 +69,13 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 // User profile
 Route::get('profile', 'ProfileController@profile');
 
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], 
+function() {
+
+	// accessible via admin/users...
+	Route::resource('users', 'UserController');
+
+});
 
     //
 });
