@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\User;
+use App\Role;
+
 class UserController extends Controller
 {
     /**
@@ -16,7 +19,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('admin.users.index', ['users' => $users]);
     }
 
     /**
@@ -59,7 +64,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $roles = Role::lists('name', 'id');
+
+        return view('admin.users.edit', ['user' => $user, 'roles' => $roles]);
     }
 
     /**
@@ -71,7 +79,28 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->roles()->sync($request->role_id);
+
+        // if the save failes, redirect back to the edit page 
+        // and show the errors
+        if ( ! $user->save() ) {
+            return redirect()
+                ->action('Admin\UserController@edit', $user->id)
+                ->with('errors', $user->getErrors())
+                ->withInput();
+        }
+
+        // success!
+        // rediorect back to the index page and pass a succes message
+        return redirect()
+            ->action('Admin\UserController@index')
+            ->with('message',
+                '<div class="alert alert-success">The user was updated!</div>');
+
     }
 
     /**

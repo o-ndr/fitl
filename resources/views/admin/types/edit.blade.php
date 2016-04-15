@@ -1,4 +1,4 @@
-@extends ('layouts.master')
+@extends ('layouts.admin')
 
 @section ('title', 'Edit a Presentation Type')
 
@@ -10,17 +10,17 @@
 
 {!! Form::model($type, 
 	[ 
-		'route' => ['types.update', $type->id],
+		'route' => ['admin.types.update', $type->id],
 		'method' => 'put'
 	]
 	) !!}
 
-@include('types.partials.object_form')
+@include('admin.types.partials.object_form')
 
 <button class="btn btn-success" type="submit">Save Changes</button>
 
 {!! Form::close() !!}
 
-@include('types.partials.delete_object')
+@include('admin.types.partials.delete_object')
 
 @endsection

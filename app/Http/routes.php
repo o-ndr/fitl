@@ -49,7 +49,6 @@ Route::get('presentations', 'PresentationController@index');
 Route::resource('presentation.ratings', 'PresentationRatingsController',
                 ['only' => ['store', 'update', 'destroy']]);
 
-Route::resource('types', 'TypeController');	
 
 // User routes
 Route::get('login', 'Auth\AuthController@getLogin');
@@ -69,11 +68,21 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 // User profile
 Route::get('profile', 'ProfileController@profile');
 
+// Presentation types
+Route::resource('types', 'TypeController',
+	['only' => ['show']]);	
+
+// ADMIN ONLY
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], 
 function() {
 
 	// accessible via admin/users...
 	Route::resource('users', 'UserController');
+
+	Route::resource('types', 'TypeController',
+	['except' => ['show']]);
+
+
 
 });
 

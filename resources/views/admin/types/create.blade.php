@@ -1,4 +1,4 @@
-@extends ('layouts.master')
+@extends ('layouts.admin')
 
 @section ('title', 'Create a Presentation Type')
 
@@ -8,9 +8,9 @@
 	<h1>Create a presentation type</h1>
 </div>
 
-{!! Form::model($type, ['route' => 'types.store']) !!}
+{!! Form::model($type, ['route' => 'admin.types.store']) !!}
 
-@include('types.partials.object_form')
+@include('admin.types.partials.object_form')
 
 <button class="btn btn-success" type="submit">Create Type</button>
 
