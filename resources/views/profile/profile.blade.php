@@ -7,6 +7,22 @@
 	<h1>My Profile</h1>
 </div>
 
+@if (Auth::user()->hasRole('member') )
+	<div class="alert alert-info">User is a member</div>
+@endif
+
+@if (Auth::user()->hasRole('admin') )
+	<div class="alert alert-info">User is an admin</div>
+@endif
+
+<h2>Roles</h2>
+<ul>
+	@foreach (Auth::user()->roles as $role)
+		<li>{{ $role->name }}</li>
+	@endforeach
+</ul>
+
+
 <h2>Submitted Presentations</h2>
 
 @include('presentations.partials.presentations', ['presentations' => $presentations])
