@@ -1,0 +1,11 @@
+{
+  "name": "fitl",
+  "description": "LocWorld Submissions Manager",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor/bower_dl",
+    "test",
+    "tests"
+  ]
+}

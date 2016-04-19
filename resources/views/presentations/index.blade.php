@@ -9,14 +9,14 @@
 
 		<div class="page-header">
 				<a href="{{ url('presentations/create') }}" class="btn btn-success pull-right">+ Presentation Proposal</a>
-				<h1>All submitted presentations</h1>
+				<h1>All submitted proposals</h1>
 		</div>
 
 		@include('presentations.partials.presentations')
 
 	</div><!-- /.col-sm-9 -->
 
-	@include('shared.presentations_sidebar')
+		@include('shared.presentations_sidebar')
 
 </div><!-- /.row -->
 

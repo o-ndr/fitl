@@ -1,7 +1,5 @@
 <hr>
 
-<h2>Reviewer Rating</h2>
-
 @include('presentations.ratings.partials.create')
 
 <hr>

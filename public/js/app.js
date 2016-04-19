@@ -15,3 +15,4 @@ $('.edit-object').click(function(e) {
 	$ratingForm.toggleClass('hide');
 });
 
+
