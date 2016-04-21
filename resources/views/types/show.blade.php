@@ -17,6 +17,8 @@
 
 
 	</div><!-- /.col-sm-9 -->
+
+	
 </div><!-- /.row -->
 
 @endsection

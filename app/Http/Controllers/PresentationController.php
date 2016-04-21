@@ -9,6 +9,7 @@ use App\Http\Requests;
 
 use App\Presentation;
 use App\Type;
+use App\Track;
 
 use Auth;
 
@@ -69,7 +70,13 @@ class PresentationController extends Controller
         // <option value="1">Case study</option>
         // <option value="2">Panel discussion</option>
         $data['types'] = Type::lists('type', 'id');
-        
+        // <select><option="VALUE">TEXT</option></select>
+        // [ VALUE => TEXT, VALUE => TEXT ]
+        // <option value="1">Advanced Localization Management</option>
+        // <option value="2">Global Business</option>
+        $data['tracks'] = Track::lists('track', 'id');
+
+
         return view('presentations.create', $data);
     }
 
@@ -104,8 +111,9 @@ class PresentationController extends Controller
 
        // success!
 
-       // establish types relationships
+       // establish types and tracks relationships
        $presentation->types()->sync($request->type_id);
+       $presentation->tracks()->sync($request->track_id);
 
        return redirect()
        ->action('PresentationController@index')
@@ -138,6 +146,9 @@ class PresentationController extends Controller
     public function edit($id)
     {
         $presentation = Presentation::findOrFail($id);
+        $tracks = Track::lists('track', 'id');
+        return view('presentations.edit', ['presentation' => $presentation, 'tracks' => $tracks]);
+
 
         if ( ! $presentation->canEdit() ) {
           abort('403', 'Not authorized.');
@@ -167,6 +178,8 @@ class PresentationController extends Controller
        $presentation->synopsis = $request->synopsis;
        $presentation->conference_track = $request->conference_track;
        $presentation->types()->sync($request->type_id);
+       $presentation->tracks()->sync($request->track_id);
+
 
        // if the save fails,
        // redirect back to the edit page

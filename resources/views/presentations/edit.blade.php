@@ -12,7 +12,8 @@
 	[
 		'action' => ['PresentationController@update', $presentation->id],
 		'method' => 'put'
-	]) !!}
+	]
+) !!}
 
 @include('presentations.partials.object_form')
 

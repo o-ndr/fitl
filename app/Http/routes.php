@@ -72,6 +72,10 @@ Route::get('profile', 'ProfileController@profile');
 Route::resource('types', 'TypeController',
 	['only' => ['show']]);	
 
+// Conference track
+Route::resource('tracks', 'TrackController');
+
+
 // ADMIN ONLY
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], 
 function() {
