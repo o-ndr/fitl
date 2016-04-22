@@ -21,3 +21,12 @@
  		['multiple' => true, 'class' => 'form-control'] 		
  	) !!}
  </div>
+
+ <div class="form-group">
+ 	{!! Form::label('type_id[]', 'Presentation type') !!}
+ 	{!! Form::select('type_id[]', 
+ 		$types,
+ 		$presentation->types->lists('id')->all(),
+ 		['multiple' => true, 'class' => 'form-control'] 		
+ 	) !!}
+ </div>

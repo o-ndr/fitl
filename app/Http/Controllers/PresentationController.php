@@ -69,6 +69,8 @@ class PresentationController extends Controller
         // <option value="1">Case study</option>
         // <option value="2">Panel discussion</option>
         $data['types'] = Type::lists('type', 'id');
+
+        $data['tracks'] = Track::lists('track_name', 'id');
         
         return view('presentations.create', $data);
     }
@@ -139,12 +141,16 @@ class PresentationController extends Controller
     {
         $presentation = Presentation::findOrFail($id);
 
+
         if ( ! $presentation->canEdit() ) {
           abort('403', 'Not authorized.');
         }
 
         $types = Type::lists('type', 'id');
         return view('presentations.edit', ['presentation' => $presentation, 'types' => $types]);
+
+        $tracks = Track::lists('track_name', 'id');
+        return view('presentations.edit', ['presentation' => $presentation, 'tracks' => $tracks]);
     }
 
     /**

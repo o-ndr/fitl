@@ -28,6 +28,10 @@ class Presentation extends Model
 		return $this->belongsToMany('App\Type', 'presentations_types');
 	}
 
+	public function tracks() {
+		return $this->belongsToMany('App\Track');
+	}
+
 	public function canEdit()
 	{
 		if ( ! Auth::check() ) {
