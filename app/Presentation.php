@@ -29,7 +29,7 @@ class Presentation extends Model
 	}
 
 	public function tracks() {
-		return $this->belongsToMany('App\Track');
+		return $this->belongsToMany('App\Track', 'presentations_tracks');
 	}
 
 	public function canEdit()

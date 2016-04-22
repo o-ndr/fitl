@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Track extends Model
 {
     public function presentations() {
-    	return $this->belongsToMany('App\Presentation');
+    	return $this->belongsToMany('App\Presentation', 'presentations_tracks');
     }
 }

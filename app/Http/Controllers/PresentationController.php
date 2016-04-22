@@ -9,6 +9,7 @@ use App\Http\Requests;
 
 use App\Presentation;
 use App\Type;
+use App\Track;
 
 use Auth;
 
@@ -71,8 +72,9 @@ class PresentationController extends Controller
         $data['types'] = Type::lists('type', 'id');
 
         $data['tracks'] = Track::lists('track_name', 'id');
-        
-        return view('presentations.create', $data);
+
+                
+        return view('presentations.create', $data, $data);
     }
 
     /**
