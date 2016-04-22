@@ -23,7 +23,7 @@ class TypeController extends Controller
     {
     	$type = Type::findOrFail($id);
         return view('types.show', 
-            ['type' => $type, 'types' => Type::all() ]);
+            ['type' => $type, 'types' => Type::all()]);
     }
 
 }

@@ -1,6 +1,6 @@
 @extends ('layouts.master')
 
-@section ('title', 'Presentations types')
+@section ('title', 'Presentations of the following type: ' . $type->type)
 
 @section('content')
 
@@ -18,6 +18,7 @@
 
 	</div><!-- /.col-sm-9 -->
 
+@include('shared.presentations_sidebar')
 	
 </div><!-- /.row -->
 

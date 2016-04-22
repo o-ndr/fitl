@@ -19,7 +19,7 @@
  	{!! Form::label('type_id[]', 'Presentation type') !!}
  	{!! Form::select('type_id[]', 
  		$types,
- 		$type->types->lists('id')->all(),
+ 		$presentation->types->lists('id')->all(),
  		['multiple' => true, 'class' => 'form-control'] 		
  	) !!}
  </div>
@@ -29,7 +29,7 @@
  	{!! Form::label('track_id[]', 'Conference track') !!}
  	{!! Form::select('track_id[]', 
  		$tracks,
- 		$track->tracks->lists('id')->all(),
+ 		$presentation->tracks->lists('id')->all(),
  		['multiple' => true, 'class' => 'form-control'] 		
  	) !!}
  </div>
