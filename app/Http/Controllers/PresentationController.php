@@ -149,10 +149,11 @@ class PresentationController extends Controller
         }
 
         $types = Type::lists('type', 'id');
-        return view('presentations.edit', ['presentation' => $presentation, 'types' => $types]);
+        // return view('presentations.edit', ['presentation' => $presentation]);
 
         $tracks = Track::lists('track_name', 'id');
-        return view('presentations.edit', ['presentation' => $presentation, 'tracks' => $tracks]);
+        return view('presentations.edit', ['presentation' => $presentation, 'tracks' => $tracks, 'types' => $types]);
+        # Mythu solved this, and taught me to use the hash, too 
     }
 
     /**
