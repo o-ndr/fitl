@@ -74,7 +74,7 @@ class PresentationController extends Controller
         $data['tracks'] = Track::lists('track_name', 'id');
 
                 
-        return view('presentations.create', $data, $data);
+        return view('presentations.create', $data);
     }
 
     /**
