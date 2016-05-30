@@ -8,10 +8,14 @@
 	{!! Form::textarea('synopsis', null, ['class' => 'form-control']) !!}
  </div>
 
+ <!--
+ // Removing this text field. Conference_track to be removed from presentations db table, too.
+
  <div class="form-group">
 	{!! Form::label('conference_track', 'Select the topic category that best fits your proposal') !!}
 	{!! Form::textarea('conference_track', null, ['class' => 'form-control']) !!}
  </div>
+-->
 
  <div class="form-group">
  	{!! Form::label('type_id[]', 'Presentation type') !!}
