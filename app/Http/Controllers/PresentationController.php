@@ -69,12 +69,13 @@ class PresentationController extends Controller
         // [ VALUE => TEXT, VALUE => TEXT ]
         // <option value="1">Case study</option>
         // <option value="2">Panel discussion</option>
-        $data['types'] = Type::lists('type', 'id');
+       
+        $types = Type::lists('type', 'id');
+        // return view('presentations.edit', ['presentation' => $presentation]);
 
-        $data['tracks'] = Track::lists('track_name', 'id');
+        $tracks = Track::lists('track_name', 'id');
 
-                
-        return view('presentations.create', $data);
+        return view('presentations.create', ['presentation' => $presentation, 'tracks' => $tracks, 'types' => $types]);
     }
 
     /**
