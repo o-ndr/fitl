@@ -6,6 +6,7 @@ use \Esensi\Model\Model;
 
 use Auth;
 
+
 class Presentation extends Model
 {
 	protected $rules = [
@@ -18,6 +19,11 @@ class Presentation extends Model
 	// ..meaning: this presentation has many ratings  
 	public function ratings() {
 		return $this->hasMany('App\Ratings')->orderBy('created_at', 'desc');
+	}
+
+		// access comments, e.g., using $presentation->comments
+	public function comments() {
+		return $this->hasMany('App\Comment')->orderBy('created_at', 'desc');
 	}
 
 	public function user() {

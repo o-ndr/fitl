@@ -9,9 +9,16 @@ $('form.delete-object').submit(function(e) {
 });
 
 // toggle rating edit form when "edit" buttons are clicked
-$('.edit-object').click(function(e) {
+$('.edit-ratingobject').click(function(e) {
 	var $ratingItem = $(this).closest('li');
-	var $ratingForm = $ratingItem.find('form.edit-object-form');
+	var $ratingForm = $ratingItem.find('form.edit-ratingobject-form');
 	$ratingForm.toggleClass('hide');
 });
 
+
+//  toggle comment edit forms when the edit buttons are clicked 
+$('.edit-commentobject').click(function(e) {
+	var $commentItem = $(this).closest('li');
+	var $commentForm = $commentItem.find('form.edit-commentobject-form');
+	$commentForm.toggleClass('hide');
+});

@@ -1,9 +1,8 @@
-
 {!! Form::model($rating,
 	[
 		'route' => ['presentation.ratings.update', $object->id, $rating->id],
 		'method' => 'put',
-		'class' => 'hide edit-object-form'
+		'class' => 'hide edit-ratingobject-form'
 	]) !!}
 
 	@include('presentations.ratings.partials.rating_form')

@@ -37,6 +37,7 @@ Route::get('/', 'PresentationController@index');
 Route::get('about', 'PageController@about');
 Route::get('contact', 'PageController@contact');
 
+# For core object type, we define routes one by one
 Route::delete('presentations/{presentation}', 'PresentationController@destroy');
 Route::get('presentations/{presentation}/edit', 'PresentationController@edit');
 Route::put('presentations/{presentation}', 'PresentationController@update');
@@ -46,9 +47,18 @@ Route::get('presentations/search', 'PresentationController@search');
 Route::get('presentations/{presentation}', 'PresentationController@show');
 Route::get('presentations', 'PresentationController@index');
 
+
+# Resource route - a single route definition in Laravel that defines
+# all of the CRUD routes for a resource at once
+
+# Btw each of the objetc types is referred to as a "resource",
+# so adding a resource route is just adding a single route entry
+# that establishes all of the routes for the resource
 Route::resource('presentation.ratings', 'PresentationRatingsController',
                 ['only' => ['store', 'update', 'destroy']]);
 
+Route::resource('presentation.comments', 'PresentationCommentController',
+                ['only' => ['store', 'update', 'destroy']]);
 
 // User routes
 Route::get('login', 'Auth\AuthController@getLogin');
