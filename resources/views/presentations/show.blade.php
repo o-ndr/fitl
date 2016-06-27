@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title',  $object->title)
+@section('title',  'LocWorld Submissions Review')
 
 @section('content')
 
@@ -11,7 +11,7 @@
 </div>
 
 <p><?php echo $object->synopsis; ?></p>
-<p><?php echo $object->conference_track; ?></p>
+<!-- <p><?php echo $object->conference_track; ?></p> -->
 <p>Presentation submitted at: <?php echo $object->created_at; ?></p>
 
 @include('presentations.ratings.partials.display')

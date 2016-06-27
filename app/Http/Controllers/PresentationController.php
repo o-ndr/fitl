@@ -91,7 +91,7 @@ class PresentationController extends Controller
        // set the presentation's data from the form data
        $presentation->presentation_title = $request->presentation_title;
        $presentation->synopsis = $request->synopsis;
-       $presentation->conference_track = $request->conference_track;
+       # $presentation->conference_track = $request->conference_track;
        $presentation->user_id = Auth::user()->id;
        
 
@@ -111,6 +111,11 @@ class PresentationController extends Controller
 
        // establish types relationships
        $presentation->types()->sync($request->type_id);
+
+       // establish tracks relationships
+       $presentation->tracks()->sync($request->track_id);
+
+
 
        return redirect()
        ->action('PresentationController@index')
@@ -175,8 +180,9 @@ class PresentationController extends Controller
         // set the presentation's data from the form data
        $presentation->presentation_title = $request->presentation_title;
        $presentation->synopsis = $request->synopsis;
-       $presentation->conference_track = $request->conference_track;
+       # $presentation->conference_track = $request->conference_track;
        $presentation->types()->sync($request->type_id);
+       $presentation->tracks()->sync($request->track_id);
 
        // if the save fails,
        // redirect back to the edit page
