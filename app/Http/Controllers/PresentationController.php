@@ -32,6 +32,7 @@ class PresentationController extends Controller
         $data = array();
         $data['presentations'] = $presentations;
         $data['types'] = Type::all();
+        $data['tracks'] = Track::all();
 
         return view('presentations.index', $data);
 
