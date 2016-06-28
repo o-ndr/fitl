@@ -9,13 +9,4 @@
 	</div>
 
 
-	<h3>Presentation Tracks</h3>
-
-	<div class="list-group">
-	@foreach ($tracks as $track)
-		<a class="list-group-item" href="{{ route('types.show', $type->id) }}">{{ $track->track }}</a>
-	@endforeach
-	</div>
-
-
 </div><!-- /.col-sm-3 -->
