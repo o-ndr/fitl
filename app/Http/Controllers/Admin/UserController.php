@@ -85,7 +85,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->roles()->sync($request->role_id);
 
-        // if the save failes, redirect back to the edit page 
+        // if the save fails, redirect back to the edit page 
         // and show the errors
         if ( ! $user->save() ) {
             return redirect()
@@ -95,7 +95,7 @@ class UserController extends Controller
         }
 
         // success!
-        // rediorect back to the index page and pass a succes message
+        // redirect back to the index page and pass a success message
         return redirect()
             ->action('Admin\UserController@index')
             ->with('message',
