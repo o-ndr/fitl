@@ -82,6 +82,10 @@ Route::get('profile', 'ProfileController@profile');
 Route::resource('types', 'TypeController',
 	['only' => ['show']]);	
 
+// Presentation tracks
+Route::resource('tracks', 'TrackController',
+	['only' => ['show']]);
+
 // ADMIN ONLY
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], 
 function() {
@@ -92,6 +96,8 @@ function() {
 	Route::resource('types', 'TypeController',
 	['except' => ['show']]);
 
+	Route::resource('tracks', 'TrackController',
+	['except' => ['show']]);
 
 
 });

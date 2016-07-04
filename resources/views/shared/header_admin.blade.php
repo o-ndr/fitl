@@ -17,6 +17,7 @@
       					<li><a href="{{ url('/') }}">App Home</a></li>
                 <li><a href="{{ url('admin/users') }}">Users</a></li>
         				<li><a href="{{ url('admin/types') }}">Presentation Types</a></li>
+                <li><a href="{{ url('admin/tracks') }}">Presentation Tracks</a></li>
         				    
       				</ul>
 
