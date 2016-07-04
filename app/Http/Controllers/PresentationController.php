@@ -49,11 +49,10 @@ class PresentationController extends Controller
       $q_query = '%' . $q . '%';
       $presentations = Presentation::where('presentation_title', 'LIKE', $q_query)
                                       ->orWhere('synopsis', 'LIKE', $q_query)
-                                      ->orWhere('conference_track', 'LIKE', $q_query)
                                       ->get();
 
       return view('presentations.search', 
-        ['q' => $q, 'presentations' => $presentations, 'types' => Type::all()]);
+        ['q' => $q, 'presentations' => $presentations, 'types' => Type::all(), 'tracks' => Track::all()]);
     }
 
     /**

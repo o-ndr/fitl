@@ -16,7 +16,11 @@
 
 	</div><!-- /.col-sm-9 -->
 
-	@include('shared.presentations_sidebar')
+<div class="col-sm-3">
+	@include('shared.presentations_sidebar_types')
+	@include('shared.presentations_sidebar_tracks')
+</div><!-- /.col-sm-3 -->
+	
 
 </div><!-- /.row -->
 
