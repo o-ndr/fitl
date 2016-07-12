@@ -111,6 +111,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->delete();
+
+        return redirect()
+            ->route('admin.users.index')
+            ->with('message',
+                '<div class="alert alert-info">The user was deleted.</div>');
     }
 }
