@@ -163,7 +163,7 @@ ol li {
 	      Click the button to reset your password: 
 		  </p>
 
-		  <table class="btn-primary" cellpadding="0" cellspacing="0" border="0">
+		  	<table class="btn-primary">
               <tr>
                 <td>
                   <a href="{{ url('password/reset/'.$token) }}">Reset Password</a>
