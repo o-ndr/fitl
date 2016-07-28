@@ -159,7 +159,18 @@ ol li {
 
       <!-- content -->
       <div class="content">
-      Click here to reset your password: {{ url('password/reset/'.$token) }}
+	      <p>	
+	      Click the button to reset your password: 
+		  </p>
+
+		  <table class="btn-primary" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <a href="{{ url('password/reset/'.$token) }}">Reset Password</a>
+                </td>
+              </tr>
+            </table>
+
 
       </div>
       <!-- /content -->
@@ -170,30 +181,6 @@ ol li {
 </table>
 <!-- /body -->
 
-<!-- footer -->
-<table class="footer-wrap">
-  <tr>
-    <td></td>
-    <td class="container">
-      
-      <!-- content -->
-      <div class="content">
-        <table>
-          <tr>
-            <td align="center">
-              <p>Don't like these annoying emails? <a href="#"><unsubscribe>Unsubscribe</unsubscribe></a>.
-              </p>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <!-- /content -->
-      
-    </td>
-    <td></td>
-  </tr>
-</table>
-<!-- /footer -->
 
 </body>
 </html>
