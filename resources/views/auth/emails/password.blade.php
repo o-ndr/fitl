@@ -161,16 +161,16 @@ ol li {
       <div class="content">
 	      <p>	
 	      Click the button to reset your password: 
-		  </p>
+		  
 
-		  	<table class="btn-primary">
-              <tr>
-                <td>
-                  <a href="{{ url('password/reset/'.$token) }}">Reset Password</a>
-                </td>
-              </tr>
-            </table>
-
+			  	<table class="btn-primary">
+	              <tr>
+	                <td>
+	                  <a href="{{ url('password/reset/'.$token) }}">Reset Password</a>
+	                </td>
+	              </tr>
+	            </table>
+			</p>
 
       </div>
       <!-- /content -->
