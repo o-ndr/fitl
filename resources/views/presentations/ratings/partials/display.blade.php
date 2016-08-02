@@ -16,7 +16,7 @@
 
 		@if ($rating->canEdit() )
 			<div class="clearfix">
-				<button class="edit-ratingobject btn btn-info btn-xs pull-left">edit</button>
+				<button href="#" class="edit-ratingobject btn btn-info btn-xs pull-left">edit</button>
 				@include('presentations.ratings.partials.delete')
 			</div>
 

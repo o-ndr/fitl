@@ -52,6 +52,7 @@ class PresentationCommentController extends Controller
         // filled out in the comment form 
         $comment->presentation_id = $presentationId;
         $comment->comment_by_reviewer = $request->comment_by_reviewer;
+        $comment->user_id = Auth::user()->id;
         # above - comment_by_reveiwer is the column name, and comment is
         # probably from here, the form data -- {!! Form::textarea('comment'...
 
@@ -88,6 +89,10 @@ class PresentationCommentController extends Controller
     public function update(Request $request, $presentationId, $id)
     {
         $comment = Comment::findOrFail($id);
+
+        if ( ! $comment->canEdit() ) {
+          abort('403', 'Not authorized.');
+        }
 
         $comment->comment_by_reviewer = $request->comment_by_reviewer;
 

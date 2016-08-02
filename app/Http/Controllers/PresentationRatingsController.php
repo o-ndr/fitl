@@ -25,7 +25,7 @@ class PresentationRatingsController extends Controller
      * @return \Illuminate\Http\Response
      */
     // presentation/{presentation}/ratings OR presentation/<id>/ratings 
-    // So adding a variable ($presenttionId) which will rab the presentation ID from the URL
+    // So adding a variable ($presenttionId) which will grab the presentation ID from the URL
     public function store(Request $request, $presentationId)
     {
         $rating = new Ratings;

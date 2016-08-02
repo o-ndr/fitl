@@ -22,7 +22,6 @@
 
 			@include('presentations.comments.partials.edit')
 		@endif
-
 	</li>
 @endforeach
 </ul>
