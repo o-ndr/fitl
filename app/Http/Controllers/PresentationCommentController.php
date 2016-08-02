@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 use App\Http\Requests;
 
 use App\Comment;
 
+use Auth;
+
 class PresentationCommentController extends Controller
 {   
  
+    public function __construct()
+      {
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
+      } 
 
     /**
      * Store a newly created resource in storage.
@@ -108,6 +115,10 @@ class PresentationCommentController extends Controller
     public function destroy($presentationId, $id)
     {
         $comment = Comment::findOrFail($id);
+
+        if ( ! $rating->canEdit() ) {
+          abort('403', 'Not authorized.');
+        }
 
         $comment->delete();
 

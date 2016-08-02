@@ -14,12 +14,14 @@
 		</div>
 		<p>{{ $comment->comment_by_reviewer }}</p> 
 
-		<div class="clearfix">
-			<button href="#" class="edit-commentobject btn btn-info btn-xs pull-left">edit</button>
-			@include('presentations.comments.partials.delete')
-		</div>
+		@if ($comment->canEdit() )
+			<div class="clearfix">
+				<button href="#" class="edit-commentobject btn btn-info btn-xs pull-left">edit</button>
+				@include('presentations.comments.partials.delete')
+			</div>
 
-		@include('presentations.comments.partials.edit')
+			@include('presentations.comments.partials.edit')
+		@endif
 
 	</li>
 @endforeach
