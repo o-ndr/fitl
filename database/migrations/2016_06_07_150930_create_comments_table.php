@@ -22,7 +22,8 @@ class CreateCommentsTable extends Migration
         // add the presentation_id foreign key
         // which references the presentations.id column
         Schema::table('comments', function (Blueprint $table) {
-            $table->foreign('presentation_id')->references('id')->on('presentations');
+            $table->foreign('presentation_id')->references('id')->on('presentations')
+            ->onDelete('cascade');
         });
     }
 
