@@ -90,9 +90,7 @@ class PresentationCommentController extends Controller
     {
         $comment = Comment::findOrFail($id);
 
-        if ( ! $comment->canEdit() ) {
-          abort('403', 'Not authorized.');
-        }
+        
 
         $comment->comment_by_reviewer = $request->comment_by_reviewer;
 
@@ -121,7 +119,7 @@ class PresentationCommentController extends Controller
     {
         $comment = Comment::findOrFail($id);
 
-        if ( ! $rating->canEdit() ) {
+        if ( ! $comment->canEdit() ) {
           abort('403', 'Not authorized.');
         }
 

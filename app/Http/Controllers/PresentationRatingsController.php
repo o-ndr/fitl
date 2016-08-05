@@ -58,9 +58,7 @@ class PresentationRatingsController extends Controller
     {
         $rating = Ratings::findOrFail($id);
 
-        if ( ! $rating->canEdit() ) {
-          abort('403', 'Not authorized.');
-        }
+        
 
         $rating->rating_by_reviewer = $request->rating_by_reviewer;
 

@@ -151,7 +151,10 @@ class PresentationController extends Controller
 
 
         if ( ! $presentation->canEdit() ) {
-          abort('403', 'Not authorized.');
+          return redirect()
+             ->action('PresentationController@index')
+             ->with('message',
+                  '<div class="alert alert-success">You are not authorized to edit this presentation!</div>');
         }
 
         $types = Type::lists('type', 'id');
