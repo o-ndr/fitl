@@ -13,6 +13,8 @@ return [
     |
     */
 
-    'contact' => 'Contactez nous',
+    'presentations_navigation_link' => 'Présentations',
+    'about_navigation_link' => 'À Propos',
+    'contact_us_navigation_link' => 'Contactez nous',
 
 ];

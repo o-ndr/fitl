@@ -12,7 +12,8 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
-    'contact' => 'Contact us',
+    'presentations_navigation_link' => 'Presentations',
+    'about_navigation_link' => 'About',
+    'contact_us_navigation_link' => 'Contact us',
 
 ];
