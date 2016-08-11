@@ -7,6 +7,10 @@
 <div class="row">
 	<div class="col-sm-9">
 
+
+    @include('shared.language_switcher')
+    
+
 		<div class="page-header">
 				<a href="{{ url('presentations/create') }}" class="btn btn-success pull-right">+ Presentation Proposal</a>
 				<h1>All submitted presentation proposals</h1>

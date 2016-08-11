@@ -60,6 +60,13 @@ Route::resource('presentation.ratings', 'PresentationRatingsController',
 Route::resource('presentation.comments', 'PresentationCommentController',
                 ['only' => ['store', 'update', 'destroy']]);
 
+
+// chnagelocale route
+// Source of this router code: 
+//  http://www.glutendesign.com/posts/detect-and-change-language-on-the-fly-with-laravel
+Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationController@changeLocale']);
+
+
 // User routes
 Route::get('login', 'Auth\AuthController@getLogin');
 Route::post('login', 'Auth\AuthController@postLogin');
