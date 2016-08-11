@@ -16,8 +16,10 @@
       				<ul class="nav navbar-nav">
       					<li><a href="{{ url('presentations') }}">Presentations</a></li>
         				<li><a href="{{ url('about') }}">About</a></li>
-        				<li><a href="{{ url('contact') }}">Contact</a></li>        
+        				<li><a href="{{ url('contact') }}">{{ trans('nav.contact') }}</a></li>        
       				</ul>
+
+
 
               @include('shared.user_actions')
               

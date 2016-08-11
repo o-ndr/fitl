@@ -8,7 +8,7 @@ http://www.glutendesign.com/posts/detect-and-change-language-on-the-fly-with-lar
         <span aria-hidden="true"><i class="fa fa-flag"></i></span>
         {!! Form::select(
             'locale',
-            ['en' => 'EN', 'fr' => 'FR'],
+            ['en' => 'English', 'fr' => 'Français'],
             \App::getLocale(),
             [
                 'id'       => 'locale',
