@@ -18,4 +18,6 @@
 		<li><a href="{{ action('Auth\AuthController@getregister') }}">Register</a></li>
 	@endif
 
+		@include('shared.language_switcher_nav')
+
 </ul>

@@ -20,12 +20,20 @@
 | it contains. The "web" middleware group is defined in your HTTP
 | kernel and includes session state, CSRF protection, and more.
 |
-*/Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+*/
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect' ]
+    ],
+    function()
     {
         /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-        Route::get('/', 'PresentationController@index');
+        Route::get('presentations', 'PresentationController@index');
+        Route::get('about', 'PageController@about');
+		Route::get('contact', 'PageController@contact');
 
-        
+
     });
 
 

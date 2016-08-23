@@ -13,7 +13,8 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
-    
+
+        
 //    Source of the "protected $middleware = [];" code below is:
 //    http://www.glutendesign.com/posts/detect-and-change-language-on-the-fly-with-laravel
 //    Registered this middleware to be fired on each request.
@@ -60,5 +61,11 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        /**** OTHER MIDDLEWARE ****/
+        'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
+        'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
+        'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class
+        // REDIRECTION MIDDLEWARE
     ];
+
 }
