@@ -3,6 +3,6 @@
 @section('title', 'About')
 
 @section('content')
-<h1>About</h1>
-<p>This is the application I am building - the LocWorld submissions and rating by the program committee</p>
+<h1>{{ trans('pages/about.about_header') }}</h1>
+<p>{{ trans('pages/about.about_page_text_body') }}</p>
 @endsection
