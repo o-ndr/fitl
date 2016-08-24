@@ -21,7 +21,10 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \App\Http\Middleware\VerifyCsrfToken::class,
-        \App\Http\Middleware\SetLocale::class,
+        
+        // When I comment out this SetLocale::class below, ...
+        // for some reason the language switches after 1st click, not 2nd... Why? 
+        //      \App\Http\Middleware\SetLocale::class,
     ];
     /**
      * The application's route middleware groups.
