@@ -14,9 +14,9 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
     			<div class="collapse navbar-collapse" id="main_menu">
       				<ul class="nav navbar-nav">
-      					<li><a href="{{ url('presentations') }}">Presentations</a></li>
-        				<li><a href="{{ url('about') }}">About</a></li>
-        				<li><a href="{{ url('contact') }}">Contact</a></li>        
+      					<li><a href="{{ url('presentations') }}">{{ trans('shared/header.presentations_navigation_link') }}</a></li>
+        				<li><a href="{{ url('about') }}">{{ trans('shared/header.about_navigation_link') }}</a></li>
+        				<li><a href="{{ url('contact') }}">{{ trans('shared/header.contact_us_navigation_link') }}</a></li>        
       				</ul>
 
               @include('shared.user_actions')

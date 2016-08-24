@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.2.*",
         "esensi/model": "0.6.*",
         "guzzlehttp/guzzle": "~5.3|~6.0",
-        "mcamara/laravel-localization": "^1.1"
+        "mcamara/laravel-localization": "^1.1",
+        "potsky/laravel-localization-helpers" : "2.3.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
