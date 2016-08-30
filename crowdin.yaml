@@ -1,0 +1,4 @@
+files:
+  - 
+    source: '/resources/lang/en/shared/*.php'
+    translation: '/resources/lang/shared/%two_letters_code%/%original_file_name%'
