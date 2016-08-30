@@ -1,4 +1,0 @@
-files:
-  - 
-    source: '/resources/lang/en/shared/*.*'
-    translation: '%original_path%'
